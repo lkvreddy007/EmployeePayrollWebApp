@@ -1,14 +1,4 @@
-export default class EmployeePayrollData{
-
-    constructor(...params){
-        this.name = params[0];
-        this.profilePic = params[1];
-        this.gender = params[2];
-        this.department = params[3];
-        this.salary = params[4];
-        this.startDate = params[5];
-        this.notes = params[6];
-    }
+class EmployeePayrollData{
 
     get name(){
         return this._name;
@@ -72,7 +62,7 @@ export default class EmployeePayrollData{
 
     toString(){
         const options = {year:'numeric', month: 'long', day:'numeric'};
-        const empDate = this.startDate === undefined ? "undefined":this.startDate.toLocaleDateString("en-US", options);
+        const empDate = !this.startDate ? "undefined" : this.startDate.toLocaleDateString("en-US", options);
         return "Name: "+this.name+" ,Profile Pic Loc: "+this.profilePic+", Gender: "+this.gender+", Department: "+this.department+", Salary: "+this.salary+", StartDate: "+this.startDate+", Notes: "+this.notes;
     }
 
