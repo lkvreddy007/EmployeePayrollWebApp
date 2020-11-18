@@ -1,4 +1,4 @@
-class EmployeePayrollData{
+export default class EmployeePayrollData{
 
     constructor(...params){
         this.name = params[0];
@@ -14,7 +14,13 @@ class EmployeePayrollData{
         return this._name;
     }
     set name(name){
-        this._name = name;
+        let nameRegex = RegExp("^[A-Z]{1}[a-z]{2,}$");
+        if(nameRegex.test(name)){
+            this._name=name;
+        }
+        else{
+            throw 'Name is Incorrect!';
+        }
     }
 
     get profilePic(){
@@ -28,7 +34,7 @@ class EmployeePayrollData{
         return this._gender;
     }
     set gender(){
-        this._gender = gender;
+        this._gender=gender;
     }
 
     get department(){
@@ -49,7 +55,12 @@ class EmployeePayrollData{
         return this._startDate;
     }
     set startDate(){
-        this._startDate = startDate;
+        if(startDate>new Date()){
+            throw 'Invalid Date';
+        }
+        else{
+        this._startDate=startDate;
+        }
     }
 
     get notes(){

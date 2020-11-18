@@ -37,7 +37,12 @@ function save(){
     var year = document.getElementById("year").value;
     var startDate = new Date(parseInt(year), parseInt(month) - 1, parseInt(day));
     var note = document.getElementById("notes").value;
-
+    try{
     const employeePayrollData = new EmployeePayrollData(name, profilePic, gender, departments, salary, startDate, note);
+    alert("Submitted"+employeePayrollData.toString());
+    }
+    catch(e){
+        console.error(e);
+    }
 }
 
