@@ -9,7 +9,7 @@ function setSalary(){
 
 function save(){
     var name = document.getElementById("name").value;
-    
+
     const pics = document.getElementsByName("profile");
     let profilePic = pics[0];
     for(let i=0;i<pics.length;i++){
