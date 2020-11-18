@@ -139,23 +139,25 @@ select{
     color: #42515f;
     opacity: 1;
     background: transparent;
-    border: none;
     font-weight: 400;
     min-width: 140px;
     padding: 7px 7px;
     border: 1px solid #707070;
     cursor: pointer;
+    border-radius: 4px;
+    background-color: rgb(221, 221, 224);
 }
 
 .submitButton{
-    border: none;
-    background-color: #f5f5f5;
+    border: 1px solid #707070;
+    background-color: rgb(221, 221, 224);
     margin-right: 30px;
 }
 
 .cancelButton{
     text-decoration: none;
     text-align: center;
+    border-radius: 4px;
 }
 
 @media only screen and (max-width: 960px){
