@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../css/new_payroll_form.css">
     <title>Employee payroll form</title>
     <script defer src="../js/new_payroll_form.js"></script>
+    <script defer src="../js//employeePayrollData.js"></script>
 </head>
 <body>
     <header class="header-content header">
@@ -19,7 +20,7 @@
         </div>
     </header>
     <div class="form-content">
-        <form class="form" action="#" onsubmit="save();return false">
+        <form class="form" name = "empForm" action="#" onsubmit="save(event);return false";>
             <div class="form-head">Employee Payroll form</div>
             <div class="row-content">
                 <label class="label text" for="name">Name</label>
@@ -61,22 +62,22 @@
             <div class="row-content">
                 <label class="label text" for="department">Department</label>
                 <div>
-                    <input class="checkbox" type="checkbox" id="hr" name="hr" value="HR">
+                    <input class="checkbox" type="checkbox" id="hr" name="department" value="HR">
                     <label class="text" for="hr">HR</label>
-                    <input class="checkbox" type="checkbox" id="sales" name="sales" value="Sales">
+                    <input class="checkbox" type="checkbox" id="sales" name="department" value="Sales">
                     <label class="text" for="sales">Sales</label>
-                    <input class="checkbox" type="checkbox" id="finance" name="finance" value="Finance">
+                    <input class="checkbox" type="checkbox" id="finance" name="department" value="Finance">
                     <label class="text" for="finance">Finance</label>
-                    <input class="checkbox" type="checkbox" id="engineer" name="engineer" value="Engineer">
+                    <input class="checkbox" type="checkbox" id="engineer" name="department" value="Engineer">
                     <label class="text" for="engineer">Engineer</label>
-                    <input class="checkbox" type="checkbox" id="others" name="others" value="Others">
+                    <input class="checkbox" type="checkbox" id="others" name="department" value="Others">
                     <label class="text" for="others">Others</label>
                 </div>
             </div>
 
             <div class="row-content">
                 <label class="label text" for="salary">Choose your salary:</label>
-                <input class="input" type="range" name="salary" id="salary" min="300000" max="500000" step="100" value="400000">
+                <input class="input" type="range" name="salary" id="salary" min="300000" max="500000" step="100" oninput="setSalary()">
                 <output class="salary-output text" for="salary">400000</output>
             </div>
 
@@ -117,18 +118,18 @@
                         <option value="31">31</option>
                     </select>
                     <select id="month" name="Month">
-                        <option value="Jan">January</option>
-                        <option value="Feb">February</option>
-                        <option value="March">March</option>
-                        <option value="April">April</option>
-                        <option value="May">May</option>
-                        <option value="June">June</option>
-                        <option value="July">July</option>
-                        <option value="Aug">August</option>
-                        <option value="Sept">September</option>
-                        <option value="Oct">October</option>
-                        <option value="Nov">November</option>
-                        <option value="Dec">December</option>
+                        <option value="1">January</option>
+                        <option value="2">February</option>
+                        <option value="3">March</option>
+                        <option value="4">April</option>
+                        <option value="5">May</option>
+                        <option value="6">June</option>
+                        <option value="7">July</option>
+                        <option value="8">August</option>
+                        <option value="9">September</option>
+                        <option value="10">October</option>
+                        <option value="11">November</option>
+                        <option value="12">December</option>
                     </select>
                     <select id="year" name="Year">
                         <option value="2020">2020</option>
@@ -147,7 +148,7 @@
             <div class="buttonParent">
                 <a href="./home.html" class="resetButton button cancelButton">Cancel</a>
                 <div class="submit-reset">
-                    <button type="submit" class="button submitButton" id="submitButton">Submit</button>
+                    <button type="submit" class="button submitButton" id="submitButton" onclick="save()">Submit</button>
                     <button type="reset" class="resetButton button">Reset</button>
                 </div>
             </div>
