@@ -16,35 +16,35 @@ class EmployeePayrollData{
     get profilePic(){
         return this._profilePic;
     }
-    set profilePic(){
-        this._profilePic = this.profilePic;
+    set profilePic(profilePic){
+        this._profilePic = profilePic;
     }
 
     get gender(){
         return this._gender;
     }
-    set gender(){
+    set gender(gender){
         this._gender=gender;
     }
 
     get department(){
         return this._department;
     }
-    set department(){
+    set department(department){
         this._department = department;
     }
 
     get salary(){
         return this._salary;
     }
-    set salary(){
+    set salary(salary){
         this._salary = salary;
     }
 
     get startDate(){
         return this._startDate;
     }
-    set startDate(){
+    set startDate(startDate){
         if(startDate>new Date()){
             throw 'Invalid Date';
         }
@@ -56,7 +56,7 @@ class EmployeePayrollData{
     get notes(){
         return this._notes;
     }
-    set notes(){
+    set notes(notes){
         this._notes = notes;
     }
 
