@@ -8,27 +8,43 @@ salary.addEventListener('input',function(){
 const text = document.querySelector('#name');
 const textError = document.querySelector('.text-error');
 text.addEventListener('input', function () {
-    let nameRegex = RegExp('^[A-Z]{1}[a-z]{2,}$');
+    let nameRegex = RegExp('^[A-Z]{1}[a-zA-Z ]{2,}$');
     if (nameRegex.test(text.value))
         textError.textContent = "";
     else
         textError.textContent = "Name is incorrect";
 });
 
+// const date = document.querySelector('#date');
+//     date.addEventListener('input',function(){
+//         const startDate = new Date(Date.parse(getInputValueById('#day')+" "+
+//                                             getInputValueById('#month')+" "+
+//                                             getInputValueById('#year')));
+//         try{
+//             (new EmployeePayrollData()).startDate = startDate;
+//             setTextValue('.date-error',"");
+//         }catch(e){
+//             setTextValue('.date-error',e);
+//         }
+//     });
+
 function save(){
     try{
         let employeePayrollData = createEmployeePayrollData();
+        console.log(employeePayrollData);
         createAndUpdateStorage(employeePayrollData);
     }
     catch(e){
+        console.log(e);
         return;
+        
     }
 }
 
 const createEmployeePayrollData = () => {
     let employeePayrollData = new EmployeePayrollData();
     try{
-        employeePayrollData.notes = getInputValueById('#name');
+        employeePayrollData.name = getInputValueById('#name');
     }
     catch(e){
         setTextValue('.text-error',e);
@@ -40,7 +56,7 @@ const createEmployeePayrollData = () => {
     employeePayrollData.salary = getInputValueById('#salary');
     employeePayrollData.notes = getInputValueById('#notes');
     let date = getInputValueById('#day')+" "+getInputValueById('#month')+" "+getInputValueById('#year');
-    employeePayrollData.date = Date.parse(date);
+    employeePayrollData.startDate = new Date( Date.parse(date));
     alert(employeePayrollData.toString());
     return employeePayrollData;
 }
