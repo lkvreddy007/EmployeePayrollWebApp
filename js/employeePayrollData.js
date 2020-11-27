@@ -66,7 +66,7 @@ class EmployeePayrollData{
 
     toString(){
         const options = {year:'numeric', month: 'long', day:'numeric'};
-        const empDate = !this.startDate ? "undefined" : this.startDate.toLocaleDateString("en-US", {timeZone: "Asia/Kolkata"});
+        const empDate = !this.startDate ? "undefined" : this.startDate.toLocaleDateString("en-US", options);
         return "Name: "+this.name+" ,Profile Pic Loc: "+this.profilePic+", Gender: "+this.gender+", Department: "+this.department+", Salary: "+this.salary+", StartDate: "+empDate+", Notes: "+this.notes;
     }
 

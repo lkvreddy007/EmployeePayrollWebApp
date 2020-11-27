@@ -76,7 +76,7 @@ const getDeptHtml = (deptList) => {
 
 const remove = (node) => {
     console.log("In remove");
-    let empPayrollData = empPayrollList.find(empData => empData.id == node.id);
+    let empPayrollData = empPayrollList.find(empData => empData._id == node._id);
     if(!empPayrollData) return;
     const index = empPayrollList
                   .map(empData => empData.id)
@@ -87,11 +87,9 @@ const remove = (node) => {
     createInnerHtml();
 }
 
-const update = (node) => {
-    console.log("Update");
-    let employee = empPayrollList.find((emp)=>emp.id==node.id);
-    if(!employee) return;
-    localStorage.setItem("editEmp",JSON.stringify(employee));
+const update = (node)=> {
+    let empPayrollData = empPayrollList.find(empData => empData._id == node._id);
+    if(!empPayrollData) return;
+    localStorage.setItem('editEmp',JSON.stringify(empPayrollData));
     window.location.replace(site_properties.add_emp_payroll_page);
 }
-
