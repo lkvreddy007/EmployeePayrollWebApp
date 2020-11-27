@@ -40,25 +40,25 @@ const createEmployeePayrollJSON = () => {
         {
             _name:'Krishna',
             _gender:'male',
-            _deparment:[
+            _department:[
                 'Engineering',
                 'Finance'
             ],
             _salary:'500000',
             _startDate:'29 Oct 2019',
-            _note:'',
+            _notes:'',
             _id:new Date().getTime(),
             _profilePic:'../assets/profile-images/Ellipse -2.png'
         },
         {
             _name:'Vamshi',
             _gender:'Male',
-            _deparment:[
+            _department:[
                 'Sales'
             ],
             _salary:'400000',
             _startDate:'29 Oct 2019',
-            _note:'',
+            _notes:'',
             _id: new Date().getTime()+1,
             _profilePic: '../assets/profile-images/Ellipse -1.png'
         }
@@ -76,11 +76,13 @@ const getDeptHtml = (deptList) => {
 
 const remove = (node) => {
     console.log("In remove");
+
     let empPayrollData = empPayrollList.find(empData => empData._id == node._id);
+
     if(!empPayrollData) return;
     const index = empPayrollList
-                  .map(empData => empData._id)
-                  .indexOf(empPayrollData._id);
+                  .map(empData => empData.id)
+                  .indexOf(empPayrollData.id);
     empPayrollList.splice(index,1);
     localStorage.setItem("EmployeePayrollList",JSON.stringify(empPayrollList));
     document.querySelector(".emp-count").textContent = empPayrollList.length;
@@ -93,3 +95,4 @@ const update = (node)=> {
     localStorage.setItem('editEmp',JSON.stringify(empPayrollData));
     window.location.replace(site_properties.add_emp_payroll_page);
 }
+

@@ -19,7 +19,7 @@ window.addEventListener('DOMContentLoaded',(event)=>{
             textError.textContent = "Name is incorrect";
     });
     checkForUpdate();
-})
+});
 
 function save(){
     try{
@@ -140,6 +140,7 @@ const setValue = (id, value) => {
     element.value = value;
 }
 
+
 const setSelectedIndex = (id, index) => {
     const element = document.querySelector(id);
     element.setSelectedIndex = index;
@@ -152,4 +153,3 @@ const checkForUpdate = () => {
     employeePayrollObj = JSON.parse(employeePayrollJson);
     setForm();
 }
-
