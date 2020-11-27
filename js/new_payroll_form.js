@@ -152,4 +152,3 @@ const checkForUpdate = () => {
     employeePayrollObj = JSON.parse(employeePayrollJson);
     setForm();
 }
-
