@@ -140,7 +140,6 @@ const setValue = (id, value) => {
     element.value = value;
 }
 
-
 const setSelectedIndex = (id, index) => {
     const element = document.querySelector(id);
     element.setSelectedIndex = index;

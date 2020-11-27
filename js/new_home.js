@@ -76,9 +76,7 @@ const getDeptHtml = (deptList) => {
 
 const remove = (node) => {
     console.log("In remove");
-
     let empPayrollData = empPayrollList.find(empData => empData._id == node._id);
-
     if(!empPayrollData) return;
     const index = empPayrollList
                   .map(empData => empData.id)
@@ -95,4 +93,3 @@ const update = (node)=> {
     localStorage.setItem('editEmp',JSON.stringify(empPayrollData));
     window.location.replace(site_properties.add_emp_payroll_page);
 }
-
