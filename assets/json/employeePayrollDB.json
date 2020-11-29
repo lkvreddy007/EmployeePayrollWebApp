@@ -23,6 +23,19 @@
       "_note": "",
       "_profilePic": "../assets/profile-images/Ellipse -1.png",
       "id": 4
+    },
+    {
+      "_name": "Selena Gomez",
+      "_profilePic": "../assets/profile-images/Ellipse -7.png",
+      "_gender": "female",
+      "_department": [
+        "Engineer",
+        "Others"
+      ],
+      "_salary": "442400",
+      "_notes": "mmmsms",
+      "_startDate": "1 Nov 2020",
+      "id": 5
     }
   ]
 }
