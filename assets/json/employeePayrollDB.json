@@ -1,30 +1,6 @@
 {
   "EmployeePayrollDB": [
     {
-      "id": 2,
-      "_name": "Bill Gates",
-      "_gender": "male",
-      "_department": [
-        "Engineering"
-      ],
-      "_salary": "500000",
-      "_startDate": "29 Oct 2019",
-      "_note": "Terrific Engineer",
-      "_profilePic": "../assets/profile-images/Ellipse -1.png"
-    },
-    {
-      "_name": "Krishna Vamshi",
-      "_gender": "female",
-      "_department": [
-        "Sales"
-      ],
-      "_salary": "45000",
-      "_startDate": "29 Nov 2020",
-      "_note": "",
-      "_profilePic": "../assets/profile-images/Ellipse -1.png",
-      "id": 4
-    },
-    {
       "_name": "Selena Gomez",
       "_profilePic": "../assets/profile-images/Ellipse -7.png",
       "_gender": "female",
@@ -36,6 +12,18 @@
       "_notes": "mmmsms",
       "_startDate": "1 Nov 2020",
       "id": 5
+    },
+    {
+      "_name": "Lankala Krishna",
+      "_profilePic": "../assets/profile-images/Ellipse -3.png",
+      "_gender": "male",
+      "_department": [
+        "Engineer"
+      ],
+      "_salary": "477800",
+      "_notes": "Engineer",
+      "_startDate": "1 Nov 2020",
+      "id": 6
     }
   ]
 }
